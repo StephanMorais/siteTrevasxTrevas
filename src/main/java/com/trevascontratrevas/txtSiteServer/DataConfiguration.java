@@ -12,7 +12,7 @@ public class DataConfiguration {
 	public DataSource dataSource() {
 		final DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.sqlite.JDBC");
-		dataSource.setUrl("jdbc:sqlite:memory:myDb?cache=shared");
+		dataSource.setUrl("jdbc:sqlite:file:/home/stephan/git/siteTrevasxTrevas/txtserver.db");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("sa");
 		return dataSource;
