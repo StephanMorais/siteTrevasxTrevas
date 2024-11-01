@@ -1,14 +1,48 @@
-package com.trevascontratrevas.txtSiteServer;
+package com.trevascontratrevas.txtSiteServer.models;
 
-public class Usuario {
+//import java.util.List;
+import java.io.Serializable;
+
+//import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+//import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotEmpty;
+
+
+@Entity
+public class Usuario implements Serializable{
 	
+	private static final long serialVersionUID = 5768786068705238836L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected int id;
+	
+	@NotEmpty
+	protected String email;
+	
+	@NotEmpty
 	protected String senha;
 	
+	@NotEmpty
+	protected String nome;
+	
+	@NotEmpty
 	protected String dataCadastro;
-	protected String email;
+	
+	protected int permissao = 0;
+	
 	protected String dataBanimento;
 	
+	/*TODO
+	@ManyToOne
+	protected List<Comentarios> comentatios;
+	*/
+
+	/*
 	public Usuario(int id, String senha, int permissao, String nome, String dataCadastro, String email, String dataBanimento) {
 		super();
 		this.id = id;
@@ -18,45 +52,32 @@ public class Usuario {
 		this.dataCadastro = dataCadastro;
 		this.email = email;
 		this.dataBanimento=dataBanimento;
-	}
+	}*/
 
-	protected int permissao;
 	public int getPermissao() {
 		return permissao;
 	}
-
-
 
 	public void setPermissao(int permissao) {
 		this.permissao = permissao;
 	}
 
-
-
 	public String getNome() {
 		return nome;
 	}
-
-
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-
-
 	public String getDataBanimento() {
 		return dataBanimento;
 	}
-
-
 
 	public void setDataBanimento(String dataBanimento) {
 		this.dataBanimento = dataBanimento;
 	}
 
-	protected String nome;
-	
 	public int getId() {
 		return id;
 	}
@@ -89,7 +110,7 @@ public class Usuario {
 		this.email = email;
 	}
 	
-	public void logar() {
+	/*public void logar() {
 		
 	};
 	
@@ -99,7 +120,7 @@ public class Usuario {
 	};
 	
 	public void baixar() {}
-	
+	*/
 	
 
 };
