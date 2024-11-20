@@ -1,1 +1,111 @@
-Hello Index
+<html>
+	<head>
+		
+		<title>Trevas Contra Trevas</title>
+		<style>
+			body{
+				color:red;
+				font-family: "Arial";
+				font-style: normal;
+			}
+			
+			a{
+				margin-top:2em;
+				color:white;
+			}
+			
+			.header{
+				position:absoluta;
+				display:block;
+				top: 0px;
+				left:0px;
+				width:100%;
+			}
+			
+			.login{
+				color:#FFFFFF;
+				display:block,inline,flex;
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				padding:2em;
+				background-color:#343442;
+				border-radius:1em;
+			}
+			
+			input{
+				display:block;
+				margin-bottom: 1em;
+				border-radius:1em;
+				padding:0.33em;
+				width:100%;
+			}
+			
+			.escondido{
+				display:none;
+			}
+			
+			button{
+				display:block;
+				margin-top:1em;
+				margin-bottom:1em;
+				padding:0.33em;
+				width:10em;
+				border-radius:1em;
+			}
+		</style>
+	</head>
+	
+<body>
+	<div class="header">
+		Header
+	</div>
+	<div class="login">
+		<form>
+			<label for="usuario">Usuário:</label>
+			<input type="text" name = "usuario"></input>
+			<label for="senha">Senha:</label>
+			<input type="password" name = "senha"></input>
+			
+			<label for="senha_nova" class="cadastro escondido">Digite Novamente A senha:</label>
+			<input type="password" name = "senha_nova" class="escondido"></input>
+			<label for="email" class="cadastro escondido">Email:</label>
+			<input type="text" name = "email" class = "escondido"></input>
+				
+		</form>
+		<center><button id = "submitFormBt" value = "cancel" onClick="javascrip:login();">Login</button></center>
+		<center><a id ="novoporaqui" href="javascript:revelar();">Novo por Aqui? Cadastre-se.<a>
+	</div>
+	
+	<div class = "fullwidth">
+		Footer
+	</div>
+	
+	<script>
+		const escondido = document.getElementsByClassName("escondido");
+		const submitFormBt = document.getElementById("submitFormBt");
+		const novoporaqui = document.getElementById("novoporaqui");
+		
+		function revelar(){
+				
+			for(let i = 0;i<escondido.length;i++){
+				escondido[i].style.display = "block";
+			}
+			
+			submitFormBt.innerText = "Cadastrar";
+			submitFormBt.onclick = cadastrar;
+			novoporaqui.style.display = "none";
+		}
+		
+		function login(){
+			console.log("login")
+		}
+		
+		function cadastrar(){
+			console.log("Cadastrar")
+		}
+	</script>
+</body>	
+
+</html>
